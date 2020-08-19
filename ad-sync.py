@@ -16,7 +16,7 @@ class AdApi(object):
             # AdApi.server = Server(app.config['ADSERVER'], app.config['ADSERVERPORT'], get_info=ALL)
             # password = getpass()
             # password = getpass('Password: ')
-            password = 'Ferteco2528'
+            password = 'Saiful12!'
             if(password):
                 AdApi.server = Server('10.0.1.2',389,
                                     use_ssl=False)
@@ -39,7 +39,6 @@ class AdApi(object):
         """
         if AdApi.server is None or AdApi.connect is None:
             AdApi.init_connection()
-            # print("test1")
         try:
         	# attributes = ['cn', 'givenName', 'mail', 'sAMAccountName'], custom filter attributes
             AdApi.connect.search(adconfig,
@@ -71,4 +70,5 @@ class AdApi(object):
             AdApi.server =None
             AdApi.connect =None
 
-AdApi.list_ad_user('dc=francofernandez,dc=local')
+# AdApi.list_ad_user('dc=francofernandez,dc=local')
+AdApi.list_ad_user('ou=Franco Fernandez User,dc=saasglobal,dc=local')
